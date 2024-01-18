@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Proposal</title>
+		<style type="text/css">
+			#message{
+				font-size: 35px;
+				text-align: center;
+				margin-top: -40px;
+				font-style: italic;
+			}
+			#text{
+				font-size: 20px;
+				margin-top: -160px;
+				font-style: normal;
+			}
+            #NB{
+				font-size: 20px;
+				text-align: center;
+				margin-top: 100px;
+			}
+            #input{
+				font-size: 20px;
+				text-align: center;
+				margin-top: 30px;
+			}
+			#Ybuttons{
+				display: flex;
+				justify-content: center;
+				margin-top: 30px;
+			}
+            #Nbuttons{
+				display: flex;
+				justify-content: center;
+				margin-top: 30px;
+			}
+			.button{
+				background-color: #1164f4;
+				color: #ffffff;
+				border: none;
+				border-radius: 5px;
+				font-size: 18px;
+				padding: 10px 20px;
+				margin-right: 10px;
+				cursor: pointer;
+                padding: 0.8em 1.7em;   
+			}
+            .butt{
+				background-color: #1164f4;
+				color: #ffffff;
+				border: none;
+				border-radius: 5px;
+				font-size: 12px;
+				padding: 7px 17px;
+				margin-right: 10px;
+				cursor: pointer;
+			}
+			.no{
+				position: absolute;
+			}
+            button{
+
+            }
+            body{
+                background-color: #cbd9f1; 
+            }
+            .Ybuttons canvas {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            }
+		</style>
+</head>
+<body>
+    <div class="container">
+        <canvas id="canvas">Canvas is not supported in your browser</canvas>
+        <div id="message">
+			<p id="text">
+				I knew you looked familiar the very first time I saw you, <br/>
+				There's no denying that we had chemistry. <br/>
+				<br/>
+				A little birdie told me you like potatoes. <br/>
+				Well, you're in luck, because i am a sweet one <br/>
+				**Drrrruuuummmmm roooollllllllllll** <br/>
+				<br/>
+				Oh there it is!!! <br/>
+				That beautiful smile of yours, <br/>
+				it illuminates the darkest shores of my heart where a question lingers, so timidly and slow <br/>
+				<br/>
+				With all the courage in me i dare to ask <br/>
+			</p>
+            Miss Ifeoluwakiishi Esther Anike Kuti-George 
+			Will you be my Girlfriend ?
+        </div>
+        <div id="Ybuttons">
+            <button class="button yes confetti-button">
+                Yes?
+            </button>
+        </div>
+        <div id="Nbuttons">
+            <button class="button no">
+                No?
+            </button>
+        </div>
+        <div id="NB" class="NB">
+            (If you considered saying No, kindly click the button below to state your reasons) 
+        </div>
+        <div id="input">
+            <Form action="mailto:aaodet@gmail.com" method="post" enctype="text/plain" subject="Reasons%20i%20decided%20to%20be%20evil&body=May%20the%20Force%20be">
+                <input type="submit" value="I AM A TRAITOR" class="butt">
+            </Form>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+document.getElementsByClassName("confetti-button")[0].addEventListener("click", () => {
+  let canvas = document.createElement("canvas");
+  let container = document.getElementsByClassName("Ybuttons")[0];
+  canvas.width = 600;
+  canvas.height = 600;
+
+  container.appendChild(canvas);
+
+  let confetti_button = confetti.create(canvas);
+  confetti_button().then(() => container.removeChild(canvas));
+});
+
+		const mdiv = document.getElementById('message');
+		const nbtn = document.querySelector('.no');
+		const ybtn = document.querySelector('.yes');
+
+		nbtn.addEventListener('click', ()=> {
+            const sw = window.innerWidth;
+			const sh = window.innerHeight;
+
+			const bw = nbtn.offsetWidth;
+			const bh = nbtn.offsetHeight;
+
+			const randx = Math.floor(Math.random() * (sw - bw));
+			const randy = Math.floor(Math.random() * (sh - bh));
+
+			nbtn.style.left = randx + 'px';
+			nbtn.style.top = randy + 'px';
+		});
+
+		ybtn.addEventListener('click', ()=> {
+			mdiv.textContent = "Well, that automatically means you are my Valentine. Also, here is a gentle reminder that 'I Love You Babe!!!'";
+            confetti();
+            ybtn.style.display = 'none';
+            nbtn.style.display = 'none';
+            input.style.visibility = "hidden";
+            document.getElementById("NB").style.visibility = "hidden";
+		});
+	</script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>
